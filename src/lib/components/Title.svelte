@@ -4,6 +4,7 @@
 </script>
 
 <!-- https://tailwindcss.com/docs/responsive-design#targeting-mobile-screens -->
-<div class="text-center text-xl lg:text-4xl font-serif"> 
+ <!-- https://www.shadcn-svelte.com/docs/theming -->
+<div class="text-center text-xl lg:text-4xl font-sans"> 
 <h1>{titleContent}</h1>
 </div>
