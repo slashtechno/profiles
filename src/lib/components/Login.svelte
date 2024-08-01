@@ -8,7 +8,7 @@
     async function login() {
         try {
             await pb
-                .collection("profiles")
+                .collection("users")
                 .authWithPassword(username, password);
         } catch (err) {
             console.error(err);
@@ -18,10 +18,9 @@
     async function signUp() {
         try {
             const data = {
-                username,
-                password,
+                username: username,
+                password: password,
                 passwordConfirm: password,
-                name: "hi",
             };
             const createdUser = await pb.collection("users").create(data);
             await login();
@@ -29,15 +28,20 @@
             console.error(err);
         }
     }
+    function signOut() {
+    pb.authStore.clear();
+  }
 </script>
 
 {#if $currentUser}
     <!-- TODO: Perhaps change this into a toast -->
+    <button on:click={signOut}>Sign out</button>
     <p>Signed is as {$currentUser.username}</p>
 {:else}
     <!-- TODO: Use  shadcn-svelte components for this -->
 
     <!-- preventDefault prevents refreshing upon submitting the form -->
+     <!-- By default, sign up will be clicked -->
     <form on:submit|preventDefault>
         <!-- Bind this input to the username variable -->
         <input type="text" placeholder="Username" bind:value={username} />
