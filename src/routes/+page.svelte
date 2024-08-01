@@ -1,7 +1,7 @@
 <script>
     import { Title } from '$lib'
-    import Login from '$lib/components/Login.svelte';
+    import CheckLogin from '$lib/components/CheckLogin.svelte';
 </script>
 <Title titleContent="Hello, world!" />
-<Login/>
+<CheckLogin/>
 <style></style>
