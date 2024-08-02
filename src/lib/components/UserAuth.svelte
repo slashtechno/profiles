@@ -54,7 +54,7 @@
 				<Label class="sr-only" for="email">Email</Label>
 				<Input
 				id="username"
-				placeholder="username"
+				placeholder="Username"
 				type="text"
 				autocapitalize="none"
 					autocomplete="off"
@@ -65,7 +65,7 @@
 				<Label class="sr-only" for="password">Password</Label>
 				<Input
 					id="password"
-					placeholder="password"
+					placeholder="Password"
 					type="password"
 					autocapitalize="none"
 					autocomplete="off"
@@ -74,14 +74,14 @@
 					bind:value={password}
 				/>
 			</div>
-			<div>
-				<Button type="button" on:click={login} disabled={isLoading}>
+			<div class="flex justify-center">
+				<Button type="button" on:click={login} disabled={isLoading} class="mx-2">
 					{#if isLoading}
 						<LoaderCircle class="mr-2 h-4 w-4 animate-spin" />
 					{/if}
 					Sign In
 				</Button>
-				<Button type="button" on:click={signUp} disabled={isLoading}>
+				<Button type="button" on:click={signUp} disabled={isLoading} class="mx-2">
 					{#if isLoading}
 						<LoaderCircle class="mr-2 h-4 w-4 animate-spin" />
 					{/if}

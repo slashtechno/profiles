@@ -2,16 +2,14 @@
 <script lang="js">
     import { currentUser, pb } from "$lib/pocketbase";
     import UserAuth from '$lib/components/UserAuth.svelte';
+    import { Button } from "$lib/components/ui/button";
     import { goto } from '$app/navigation';
+
 
 
     function signOut() {
     pb.authStore.clear();
   }
-  // https://stackoverflow.com/questions/74805197/how-to-redirect-to-page-in-sveltekit/75786059#75786059
-  function redirectToLogin() {
-        goto('/login');
-    }
 </script>
 
 {#if $currentUser}
@@ -19,5 +17,8 @@
     <button on:click={signOut}>Sign out</button>
     <p>Signed is as {$currentUser.username}</p>
 {:else}
-<button on:click={redirectToLogin}>Login/Sign-up</button>
+<!-- Center button and add a top margin of 1rem -->
+<div class="flex justify-center mt-4">  
+    <Button href="/login" class="content-center">Login / Sign Up</Button>
+</div>
 {/if}
