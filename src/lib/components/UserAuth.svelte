@@ -23,9 +23,8 @@
 			window.history.back();
 		} catch (err) {
 			console.error(err.data);
-			toast("err");
-			// toast(err.data.message);
-		}
+			// toast("err");
+			toast(JSON.stringify(err.data))		}
 	}
 
 	async function signUp() {
@@ -39,7 +38,7 @@
 			await login();
 		} catch (err) {
 			console.error(err.data);
-			toast(err.data.message);
+			toast(JSON.stringify(err.data))
 		}
 	}
 	function signOut() {
