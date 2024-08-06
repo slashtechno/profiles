@@ -3,29 +3,31 @@
 	import { Button } from "$lib/components/ui/button/index.js";
 	import { Label } from "$lib/components/ui/label/index.js";
 	import { Input } from "$lib/components/ui/input/index.js";
-	import { cn } from "$lib/utils.js";
-	import { currentUser, pb } from "$lib/pocketbase";
-	
+	import { pb } from "$lib/pocketbase";
+	import { toast, Toaster } from "svelte-sonner";
+
 	let isLoading = false;
 	// async function onSubmit() {
-		// 	isLoading = true;
-		
+	// 	isLoading = true;
+
 	// 	setTimeout(() => {
 	// 		isLoading = false;
 	// 	}, 3000);
 	// }
-	
+
 	let username;
 	let password;
 	async function login() {
 		try {
 			await pb.collection("users").authWithPassword(username, password);
+			window.history.back();
 		} catch (err) {
-			console.error(err);
+			console.error(err.data);
+			toast("err");
+			// toast(err.data.message);
 		}
-		window.history.back()
 	}
-	
+
 	async function signUp() {
 		try {
 			const data = {
@@ -36,9 +38,9 @@
 			const createdUser = await pb.collection("users").create(data);
 			await login();
 		} catch (err) {
-			console.error(err);
+			console.error(err.data);
+			toast(err.data.message);
 		}
-		window.history.back()
 	}
 	function signOut() {
 		pb.authStore.clear();
@@ -53,10 +55,10 @@
 				<!-- sr-only = screen reader-only -->
 				<Label class="sr-only" for="email">Email</Label>
 				<Input
-				id="username"
-				placeholder="Username"
-				type="text"
-				autocapitalize="none"
+					id="username"
+					placeholder="Username"
+					type="text"
+					autocapitalize="none"
 					autocomplete="off"
 					autocorrect="off"
 					disabled={isLoading}
@@ -75,13 +77,23 @@
 				/>
 			</div>
 			<div class="flex justify-center">
-				<Button type="button" on:click={login} disabled={isLoading} class="mx-2">
+				<Button
+					type="button"
+					on:click={login}
+					disabled={isLoading}
+					class="mx-2"
+				>
 					{#if isLoading}
 						<LoaderCircle class="mr-2 h-4 w-4 animate-spin" />
 					{/if}
 					Sign In
 				</Button>
-				<Button type="button" on:click={signUp} disabled={isLoading} class="mx-2">
+				<Button
+					type="button"
+					on:click={signUp}
+					disabled={isLoading}
+					class="mx-2"
+				>
 					{#if isLoading}
 						<LoaderCircle class="mr-2 h-4 w-4 animate-spin" />
 					{/if}
@@ -91,3 +103,4 @@
 		</div>
 	</form>
 </div>
+<Toaster />

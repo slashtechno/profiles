@@ -1,17 +1,23 @@
 <script>
     // Runs on client
     import SvelteMarkdown from 'svelte-markdown'
-    import { pb } from "$lib/pocketbase";
+    import { pb} from "$lib/pocketbase";
     import { onMount } from 'svelte';
+    import {toast} from 'svelte-sonner'
     
     export let data;
     let username = data.username;
     let record
 
     onMount(async () => {
+        try{
         record = await pb.collection("users").getFirstListItem(
             pb.filter("username={:username}", { username: username })
         );
+        } catch (err){
+            console.error(err.data)
+            toast(err.data.message)
+        }
         console.log(record);
     });
     
