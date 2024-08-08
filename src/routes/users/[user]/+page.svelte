@@ -16,7 +16,7 @@
         );
         } catch (err){
             console.error(err.data)
-            toast(err.data.message)
+            toast(err.data)
         }
         console.log(record);
     });

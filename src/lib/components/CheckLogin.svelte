@@ -14,8 +14,7 @@
 
 {#if $currentUser}
     <!-- TODO: Perhaps change this into a toast -->
-    <button on:click={signOut}>Sign out</button>
-    <p>Signed is as {$currentUser.username}</p>
+    <Button on:click={signOut} class="my-4">Sign out "{$currentUser.username}"</Button>
 {:else}
 <!-- Center button and add a top margin of 1rem -->
 <div class="flex justify-center mt-4">  
