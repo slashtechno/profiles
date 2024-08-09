@@ -4,7 +4,9 @@
     import { pb} from "$lib/pocketbase";
     import { onMount } from 'svelte';
     import insane from "insane";
-    import {toast} from 'svelte-sonner'
+    import {toast, Toaster} from 'svelte-sonner'
+    import { goto } from '$app/navigation';
+
     
     export let data;
     let username = data.username;
@@ -18,6 +20,11 @@
         } catch (err){
             console.error(err.data)
             toast(err.data)
+            if (err.data.code === 404){
+                // User not found
+                // Redirect to 404 page
+                goto('/404');
+            }
         }
         console.log(record);
     });
@@ -34,3 +41,4 @@
     <p>Loading...</p>
 {/if}
 </div>
+<Toaster />
