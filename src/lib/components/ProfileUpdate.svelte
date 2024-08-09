@@ -7,6 +7,7 @@
     import { Label } from "$lib/components/ui/label";
     import { onMount } from "svelte";
     import SvelteMarkdown from "svelte-markdown";
+    
 
     let description, record, id
 
@@ -41,11 +42,11 @@
         }
     }
 </script>
-
+{#if $currentUser}
 <form
 class="bg-background focus-within:ring-ring relative overflow-hidden rounded-lg border focus-within:ring-1" preventDefault={update}>
-<p class="text-2xl">Bio</p>
-    <Label for="bio" class="sr-only">Profile bio</Label>
+<!-- <p class="text-2xl">Bio</p> -->
+    <Label for="bio" class="text-lg">Your bio:</Label>
     <Textarea
         id="bio"
         class="min-h-12 resize-none border-0 p-3 shadow-none focus-visible:ring-0"
@@ -59,3 +60,8 @@ class="bg-background focus-within:ring-ring relative overflow-hidden rounded-lg 
     </div>
 </form>
 <Toaster />
+<Label class="text-2xl my-4">Markdown Preview:</Label>
+<div class="border border-border rounded-lg p-4 shadow-md bg-card text-card-foreground">
+<SvelteMarkdown source={description} />
+</div>
+{/if}

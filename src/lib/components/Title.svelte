@@ -5,6 +5,6 @@
 
 <!-- https://tailwindcss.com/docs/responsive-design#targeting-mobile-screens -->
  <!-- https://www.shadcn-svelte.com/docs/theming -->
-<div class="text-center text-xl lg:text-4xl font-sans"> 
+<div class="text-center text-2xl lg:text-4xl font-sans"> 
 <h1>{titleContent}</h1>
 </div>
