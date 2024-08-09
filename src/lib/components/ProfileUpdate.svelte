@@ -7,9 +7,9 @@
     import { Label } from "$lib/components/ui/label";
     import { onMount } from "svelte";
     import SvelteMarkdown from "svelte-markdown";
-    
+    import insane from "insane";
 
-    let description, record, id
+    let description, record, id;
 
     onMount(async () => {
         try {
@@ -20,7 +20,7 @@
             );
             console.log(record);
             description = record.description;
-            id = record.id
+            id = record.id;
         } catch (err) {
             console.error(err.data);
             toast(err.data);
@@ -28,40 +28,48 @@
     });
 
     async function update() {
-        console.log("Updating")
+        console.log("Updating");
         try {
             const data = {
-                description: description
+                description: description,
             };
-            const record = await pb
-                .collection("users")
-                .update(id, data);
+            const record = await pb.collection("users").update(id, data);
         } catch (err) {
-            console.error(err.data)
+            console.error(err.data);
             toast(JSON.stringify(err.data));
         }
     }
 </script>
+
 {#if $currentUser}
-<form
-class="bg-background focus-within:ring-ring relative overflow-hidden rounded-lg border focus-within:ring-1" preventDefault={update}>
-<!-- <p class="text-2xl">Bio</p> -->
-    <Label for="bio" class="text-lg">Your bio:</Label>
-    <Textarea
-        id="bio"
-        class="min-h-12 resize-none border-0 p-3 shadow-none focus-visible:ring-0"
-        bind:value={description}
-    />
-    <div class="flex items-center p-3 pt-0">
-        <Button type="submit" size="sm" class="ml-auto gap-1.5" on:click={update}>
-            Update bio
-            <CornerDownLeft class="size-3.5" />
-        </Button>
+    <form
+        class="bg-background focus-within:ring-ring relative overflow-hidden rounded-lg border focus-within:ring-1"
+        preventDefault={update}
+    >
+        <!-- <p class="text-2xl">Bio</p> -->
+        <Label for="bio" class="text-lg">Your bio:</Label>
+            <Textarea
+                id="bio"
+                class="min-h-12 resize-none border border-border p-3 focus-visible:ring-0"
+                bind:value={description}
+            />
+        <div class="flex items-center p-3 pt-0">
+            <Button
+                type="submit"
+                size="sm"
+                class="ml-auto gap-1.5"
+                on:click={update}
+            >
+                Update bio
+                <CornerDownLeft class="size-3.5" />
+            </Button>
+        </div>
+    </form>
+    <Toaster />
+    <Label class="text-2xl my-4">Markdown Preview:</Label>
+    <div
+        class="border border-border rounded-lg p-4 shadow-md bg-card text-card-foreground"
+    >
+        <SvelteMarkdown source={insane(description)} />
     </div>
-</form>
-<Toaster />
-<Label class="text-2xl my-4">Markdown Preview:</Label>
-<div class="border border-border rounded-lg p-4 shadow-md bg-card text-card-foreground">
-<SvelteMarkdown source={description} />
-</div>
 {/if}
