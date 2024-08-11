@@ -5,7 +5,6 @@
 </script>
 
 <div class="items-center text-center">
-    <Title titleContent="Hello, world!" />
     <CheckLogin />
     <ProfileUpdate />
 </div>

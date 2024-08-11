@@ -76,3 +76,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  a {
+    @apply underline text-primary px-0.5 py-0.5 rounded transition-colors duration-300 hover:bg-blue-500;
+  }
+}

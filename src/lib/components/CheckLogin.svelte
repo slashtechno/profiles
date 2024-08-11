@@ -23,7 +23,7 @@
         <Alert.Root>
             <Alert.Title>Hey!</Alert.Title>
             <Alert.Description>
-                You're signed in as <a class="text-foreground hover:text-accent-foreground underline font-semibold"
+                You're signed in as <a
                     href={`${baseURL}/users/${$currentUser.username}`}
                 >
                     {$currentUser.username}
@@ -31,14 +31,13 @@
             >
             <Alert.Description>
                 Share your profile with others by sharing this link: <a
-                    class="text-foreground hover:text-accent-foreground underline font-semibold"
                     href={`${baseURL}/users/${$currentUser.username}`}
                 >
                     {baseURL}/users/{$currentUser.username}
                 </a>
             </Alert.Description>
+            <Button class="mt-2" on:click={signOut}>Sign out</Button>
         </Alert.Root>
-        <Button class="mt-2" on:click={signOut}>Sign out</Button>
     </div>
 {:else}
     <!-- Center button and add a top margin of 1rem -->
