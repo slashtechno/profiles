@@ -1,9 +1,8 @@
 <script>
     // Runs on client
-    import SvelteMarkdown from 'svelte-markdown'
+    import CleanMarkdown from "$lib/components/CleanMarkdown.svelte";
     import { pb} from "$lib/pocketbase";
     import { onMount } from 'svelte';
-    import insane from "insane";
     import {toast, Toaster} from 'svelte-sonner'
     import { goto } from '$app/navigation';
 
@@ -48,7 +47,7 @@
 </a>
 <!-- <h3 class="text-lg">About {username}:</h3> -->
 {#if record}
-    <SvelteMarkdown source={insane(record.description)} />
+    <CleanMarkdown src={record.description} />
 {:else}
     <p>Loading...</p>
 {/if}

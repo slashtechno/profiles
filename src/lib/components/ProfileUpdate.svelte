@@ -6,8 +6,7 @@
     import { Textarea } from "$lib/components/ui/textarea";
     import { Label } from "$lib/components/ui/label";
     import { onMount } from "svelte";
-    import SvelteMarkdown from "svelte-markdown";
-    import insane from "insane";
+    import CleanMarkdown from "$lib/components/CleanMarkdown.svelte";
 
     let description, record, id;
 
@@ -70,6 +69,6 @@
     <div
     class="border border-border rounded-lg p-4 shadow-md bg-card text-card-foreground"
     >
-        <SvelteMarkdown source={insane(description)} />
+        <CleanMarkdown src={description} />
     </div>
 {/if}
