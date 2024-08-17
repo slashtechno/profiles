@@ -3,7 +3,7 @@ import { writable } from 'svelte/store';
 import { toast } from 'svelte-sonner'
 
 // Connect to the PocketBase server
-export const pb = new PocketBase('http://129.80.179.106:8090') 
+export const pb = new PocketBase('https://profiles-api.angad.me') 
 
 // Create a variable for the current user
 // Default value is pb.authStore.model which is null until the user logs in and is then the db record
