@@ -82,3 +82,19 @@
     @apply underline text-primary px-0.5 py-0.5 rounded transition-colors duration-300 hover:bg-blue-500;
   }
 }
+
+/* https://tailwindcss.com/docs/preflight#headings-are-unstyled */
+@layer components {
+  .markdown h1 {
+    @apply text-3xl;
+  }
+  .markdown h2 {
+    @apply text-2xl;
+  }
+  .markdown h3 {
+    @apply text-xl;
+  }
+  .markdown h4 {
+    @apply text-lg;
+  }
+}
