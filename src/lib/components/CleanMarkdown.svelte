@@ -11,6 +11,7 @@
             allowedTags: [...insane.defaults.allowedTags, "iframe"],
             allowedAttributes: {
                 ...insane.defaults.allowedAttributes,
+                // img: ["align", "alt", "height", "src", "width"],
             },
             allowedSchemes: [...insane.defaults.allowedSchemes], 
         };
@@ -19,7 +20,7 @@
     });
 </script>
 
-<div class="markdown">
+<div class="markdown flex flex-col items-center">
 <!-- <SvelteMarkdown source={src} /> -->
 <SvelteMarkdown source={insane(src, allowedConfig)} />
 </div>
