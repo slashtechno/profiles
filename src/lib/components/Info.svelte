@@ -12,7 +12,8 @@
       >What's this?</Dialog.Trigger
     >
   </div>
-  <Dialog.Content class="sm:max-w-[425px]">
+  <!-- On small screens, the dialog will take up the full width of the screen. On larger screens, it will be capped at 425px. -->
+  <Dialog.Content class="sm:max-w-[425px] max-h-[80vh] overflow-y-auto scroll">
     <Dialog.Header>
       <Dialog.Title>What's this?</Dialog.Title>
     </Dialog.Header>

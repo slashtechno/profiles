@@ -1,38 +1,24 @@
-# create-svelte
+# _profiles_  
+Social media platforms can be bloated. What about a rich text landing page that's yours to customize?  
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## Features  
+- **Simple**: No magic algorithms, just a unique URL to share.  
+    - Syntax: `https://profiles.angad.me/users/<username>`
+- **Customizable**: Using Markdown, create a rich text landing page.
+    - Images, links, lists, etc.  
+- **Open Source**: [GitHub Repository](https://github.com/slashtechno/profiles)  
+- **Free**: No ads, no monetization. Just a fun project.  
 
-## Creating a project
+## Usage  
+1. Visit `https://profiles.angad.me`  
+2. Sign in or sign up  
+3. Create a new profile  
+4. Customize your profile using Markdown  
+5. Share your profile URL  
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Self-hosting  
+1. Import `pb_schema.json` into a PocketBase instance  
+2. Change the URL in `src/lib/pocketbase.js`  
+3. Run `npm install`
+4. Run `npm run dev`
+    - For production, run `npm run build` and deploy the `build` folder  
