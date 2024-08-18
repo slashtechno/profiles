@@ -50,25 +50,29 @@
         name="description"
         content="This is {possessiveNoun(username)} space on the internet."
     />
-    
+
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://profiles.angad.me" />
     <meta property="og:type" content="profile" />
-    <meta property="og:title" content="{possessiveNoun(username)} Profile" />
+    <meta property="og:title" content="{possessiveNoun(username)} profile" />
     <meta
         property="og:description"
         content="This is {possessiveNoun(username)} space on the internet."
     />
+    <meta property="og:image" content="/ben-sweet-2LowviVHZ-E-unsplash.jpg">
+
 
     <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary_large_`image" />
     <meta property="twitter:domain" content="profiles.angad.me" />
     <meta property="twitter:url" content={url} />
-    <meta name="twitter:title" content="{possessiveNoun(username)} Profile" />
+    <meta name="twitter:title" content="{possessiveNoun(username)} profile" />
     <meta
         name="twitter:description"
         content="This is {possessiveNoun(username)} space on the internet."
     />
+    <meta name="twitter:image" content="/ben-sweet-2LowviVHZ-E-unsplash.jpg">
+
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 </svelte:head>
