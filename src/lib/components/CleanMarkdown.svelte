@@ -9,10 +9,12 @@
     let allowedConfig;
     onMount(() => {
         allowedConfig = {
-            allowedTags: [...insane.defaults.allowedTags, "iframe"],
+            allowedTags: [
+                ...insane.defaults.allowedTags, 
+                "iframe"],
             allowedAttributes: {
                 ...insane.defaults.allowedAttributes,
-                // img: ["align", "alt", "height", "src", "width"],
+                img: ["height", "src", "width"],
             },
             allowedSchemes: [...insane.defaults.allowedSchemes],
         };
@@ -23,7 +25,7 @@
 
 <div class="markdown text-center">
     <!-- <SvelteMarkdown source={src} /> -->
-    <SvelteMarkdown source={insane(emojify(src, allowedConfig))} />
+    <SvelteMarkdown source={insane(emojify(src), allowedConfig)} />
 </div>
 
 <style>

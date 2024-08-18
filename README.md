@@ -4,7 +4,7 @@ Social media platforms can be bloated. What about a rich text landing page that'
 ## Features  
 - **Simple**: No magic algorithms, just a unique URL to share.  
     - Syntax: `https://profiles.angad.me/users/<username>`
-- **Customizable**: Using Markdown, create a rich text landing page.
+- **Customizable**: Using Markdown (and/or some HTML), create a rich text landing page.
     - Images, links, lists, etc.  
     - Emoji support!
 - **Open Source**: [GitHub Repository](https://github.com/slashtechno/profiles)  

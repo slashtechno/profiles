@@ -26,10 +26,10 @@
         <em>profiles</em> is a project that allows you to make a home for yourself
         on the internet with markdown. Each user gets their own profile page, which
         can be customized with markdown. Why markdown? It's simple, easy to learn,
-        and can be used to create rich text. In addition, things like images or even iframes can be embedded. Emojis are supported as well.
+        and can be used to create rich text. In addition, things like images can be embedded. Emojis are supported with <code>:emoji:</code>. For advanced customization, HTML can be used.
       </p>
       <br>
-      <p>If you haven't used markdown before, now's a perfect time to <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank">learn</a> about it! Before it's rendered, the markdown is sanitized.</p>
+      <p>If you haven't used markdown before, now's a perfect time to <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank">learn</a> about it! Before it's rendered, the markdown (and any HTML) is sanitized.</p>
       <br>
       <p>Each profile has it's own unique URL, which can be shared with others. There are no ads and no magic algorithms. Just you and your home on the internet.</p>
       <br>

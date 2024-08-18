@@ -5,6 +5,8 @@
     import ProfileUpdate from "$lib/components/ProfileUpdate.svelte";
     import * as Alert from "$lib/components/ui/alert";
     import { onMount } from "svelte";
+    import { badgeVariants } from "$lib/components/ui/badge";
+
 
 
     let baseURL
@@ -41,8 +43,11 @@
     </div>
 {:else}
     <!-- Center button and add a top margin of 1rem -->
-    <div class="flex justify-center mt-4">
+    <div class="flex justify-center my-4">
         <Button href="/login" class="content-center">Login / Sign Up</Button>
-        <!-- <ProfileUpdate /> -->
+    </div>
+    <!-- <hr /> -->
+    <div class="justify-center my-4">
+        <a href="/users/angad" class={badgeVariants({ variant: "outline" })}>Example profile</a>
     </div>
 {/if}
