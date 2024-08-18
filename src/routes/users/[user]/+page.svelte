@@ -59,7 +59,7 @@
         property="og:description"
         content="This is {possessiveNoun(username)} space on the internet."
     />
-    <meta property="og:image" content="/ben-sweet-2LowviVHZ-E-unsplash.jpg">
+    <meta property="og:image" content="https://profiles.angad.me/ben-sweet-2LowviVHZ-E-unsplash.jpg">
 
 
     <!-- Twitter Meta Tags -->
@@ -71,7 +71,7 @@
         name="twitter:description"
         content="This is {possessiveNoun(username)} space on the internet."
     />
-    <meta name="twitter:image" content="/ben-sweet-2LowviVHZ-E-unsplash.jpg">
+    <meta name="twitter:image" content="https://profiles.angad.me/ben-sweet-2LowviVHZ-E-unsplash.jpg">
 
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
