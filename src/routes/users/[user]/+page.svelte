@@ -29,6 +29,17 @@
         }
         console.log(record);
     });
+
+    function possessiveNoun(noun) {
+        if (!noun) {
+            return '';
+        }
+        if (noun.toLowerCase().endsWith('s')) {
+            return noun + "'";
+        } else {
+            return noun + "'s";
+        }
+    }
     
 </script>
 
@@ -43,7 +54,7 @@
 <!-- <h2 class="text-2xl">{username}</h2> -->
 <!-- TODO: use compromise to properly make the noun possessive https://www.npmjs.com/package/compromise  -->
 <a href={url} style="text-decoration: none; transition: none; background-color: transparent;">
-    <p class="text-lg mb-6 text-secondary bg-secondary-foreground rounded-tl-full rounded-tr-full rounded-bl-full p-2 inline-block">This is <em>{username}</em>'s space on the internet.</p>
+    <p class="text-lg mb-6 text-secondary bg-secondary-foreground rounded-tl-full rounded-tr-full rounded-bl-full p-2 inline-block">This is <em>{possessiveNoun(username)}</em> space on the internet.</p>
 </a>
 <!-- <h3 class="text-lg">About {username}:</h3> -->
 {#if record}
