@@ -97,4 +97,9 @@
   .markdown h4 {
     @apply text-lg;
   }
+
+  /*  In CleanMarkdown.svlete for now */
+  /* .markdown img {
+    @apply mx-auto;
+  } */
 }

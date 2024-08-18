@@ -47,6 +47,7 @@
     >
         <!-- <p class="text-2xl">Bio</p> -->
         <Label for="bio" class="text-lg md:text-2xl my-4 inline-block">Your bio:</Label>
+        <!-- TODO: Center stuff in the textarea -->
             <Textarea
                 id="bio"
                 class="min-h-60 lg:min-h-32 resize-y border border-border p-3 focus-visible:ring-0"
