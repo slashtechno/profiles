@@ -1,6 +1,6 @@
 # _profiles_  
 Social media platforms can be bloated. What about a rich text landing page that's yours to customize?  
-
+![Screenshot of an example profile](screenshot.png)
 ## Features  
 - **Simple**: No magic algorithms, just a unique URL to share.  
     - Syntax: `https://profiles.angad.me/users/<username>`
